@@ -179,8 +179,10 @@ def custom_len(input_list):
     """
     like len(input_list), should return the number of items in the list
     """
-
-    return 0
+    count = 0
+    for i in input_list:
+        count += 1
+    return count
 
 
 # For the next four exercises, you'll need to be clever and think about ways
@@ -197,8 +199,10 @@ def custom_append(input_list, value):
     like input_list.append(value), should add the value to the end of the list
     and return nothing
     """
-
-    pass
+    count = 0
+    for i in input_list:
+        count += 1
+    input_list[count:] = [value]
 
 
 def custom_extend(input_list, second_list):
@@ -206,8 +210,12 @@ def custom_extend(input_list, second_list):
     like input_list.extend(second_list), should append every item in the second
     list to the end of the first list and return nothing
     """
-
-    pass
+    count = 0
+    for i in input_list:
+        count += 1
+    for item in second_list:
+        input_list[count:] = [item]
+        count +=1
 
 
 def custom_insert(input_list, index, value):
@@ -215,9 +223,19 @@ def custom_insert(input_list, index, value):
     like input_list.insert(index, value), should insert (not replace) the value
     at the specified index of the input list and return nothing
     """
+    start_of_the_list = input_list[0:(index-1)]
+    end_of_the_list = input_list[index:]
+    
+    startcount = 0
+    for item in start_of_the_list:
+        startcount +=1
+    start_of_the_list[startcount:] = [value]
 
-    pass
+    for item in end_of_the_list:
+        start_of_the_list[startcount:] = [item]
+        startcount +=1
 
+    input_list = start_of_the_list
 
 def custom_remove(input_list, value):
     """
