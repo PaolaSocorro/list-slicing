@@ -66,7 +66,7 @@ def first_three(input_list):
     [ A, B, C, D, E, F ] --> [ A, B, C ]
     """
 
-    return []
+    return input_list[0:3]
 
 
 def last_five(input_list):
@@ -75,7 +75,7 @@ def last_five(input_list):
     [ A, B, C, D, E, F ] --> [ B, C, D, E, F ]
     """
 
-    return []
+    return input_list[-5:]
 
 
 def middle(input_list):
@@ -84,7 +84,7 @@ def middle(input_list):
     [ A, B, C, D, E, F ] --> [ C, D ]
     """
 
-    return []
+    return input_list[2:-2]
 
 
 def inner_four(input_list):
@@ -93,7 +93,7 @@ def inner_four(input_list):
     [ A, B, C, D, E, F, G ] --> [ C, D, E, F ]
     """
 
-    return []
+    return input_list[2:7]
 
 
 def inner_four_end(input_list):
@@ -103,7 +103,7 @@ def inner_four_end(input_list):
     [ A, B, C, D, E, F, G, H, I, J, K, L] --> [ G, H, I, J ]
     """
 
-    return []
+    return input_list[-6:-2]
 
 
 def replace_head(input_list):
@@ -112,7 +112,7 @@ def replace_head(input_list):
     [ A, B, C, D ] --> [ 42, B, C, D]
     """
 
-    pass
+    input_list[0] = 42
 
 
 def replace_third_and_last(input_list):
@@ -121,7 +121,8 @@ def replace_third_and_last(input_list):
     [ A, B, C, D, E, F ] --> [ A, B, 37, D, E, 37 ]
     """
 
-    pass
+    input_list[2]=37
+    input_list[-1]=37
 
 
 def replace_middle(input_list):
@@ -130,8 +131,7 @@ def replace_middle(input_list):
     that order, except for the first two and last two elements.
     [ A, B, C, D, E, F, G, H, I ] --> [ A, B, 42, 37, H, I ]
     """
-
-    pass
+    input_list[2:-2] = [42, 37]
 
 
 def delete_third_and_seventh(input_list):
@@ -140,7 +140,8 @@ def delete_third_and_seventh(input_list):
     [ A, B, C, D, E, F, G, H ] --> [ A, B, D, E, F, H ]
     """
 
-    pass
+    del input_list[2]
+    del input_list[6]
 
 
 def delete_middle(input_list):
@@ -150,7 +151,7 @@ def delete_middle(input_list):
     [ A, B, C, D, E, F, G, H ] --> [ A, B, G, H ]
     """
 
-    pass
+    input_list[2:-2] = []
 
 
 ##############################################################################
