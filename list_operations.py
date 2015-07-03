@@ -242,8 +242,13 @@ def custom_remove(input_list, value):
     like input_list.remove(value), should remove the first item of the
     value specified and return nothing
     """
+    count=0
+    for i in input_list:
+        if i == value:
+            new_index = count
+        count +=1
 
-    pass
+    input_list[(new_index):(new_index+1)]=[]
 
 
 def custom_pop(input_list):
